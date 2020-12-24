@@ -38,3 +38,12 @@ func filterTransactionsByMcc(transactions []Transaction, mccs []Mcc) []Transacti
 	}
 	return result
 }
+
+func TranslateMcc(code Mcc) string {
+	result := "Категория не указана"
+	value, ok := Mccs()[code]
+	if ok {
+		result = value
+	}
+	return result
+}
